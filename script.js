@@ -4,9 +4,20 @@
 
   const btn = document.getElementById("ctaButton");
   const out = document.getElementById("ctaResult");
+  const email = "hello@talkingcanvas.art";
   if (btn && out) {
-    btn.addEventListener("click", () => {
-      out.textContent = "Lovely choice. Now tailor the words and colors to your story.";
+    btn.addEventListener("click", async () => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(email);
+          out.textContent = `Email copied: ${email}`;
+        } else {
+          out.textContent = `Email: ${email}`;
+        }
+      } catch (err) {
+        out.textContent = `Email: ${email}`;
+      }
     });
   }
 })();
+

@@ -269,6 +269,22 @@ main {
   font-size: 18px;
 }
 
+/* Work grid enhancements */
+.work-card .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  color: #4338ca;
+  background:
+    radial-gradient(120px 80px at 20% 20%, rgba(108, 99, 255, 0.18), transparent),
+    radial-gradient(120px 80px at 80% 80%, rgba(245, 158, 11, 0.18), transparent),
+    #ffffff;
+  border: 1px solid var(--border);
+}
+
 .split {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
@@ -430,3 +446,4 @@ button.pill {
     padding: 18px;
   }
 }
+
